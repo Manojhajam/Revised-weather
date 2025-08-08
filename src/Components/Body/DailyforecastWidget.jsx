@@ -72,7 +72,7 @@ const DailyforecastWidget = ({ data, handleClick }) => {
           onClose={() => {
             setShowDailyweather(false);
           }}
-          title="Weather Details"
+          title="More Daily Details"
         >
           <div className="space-y-2">
             <div>Humidity: {Math.round(data?.humidity || 0)}%</div>

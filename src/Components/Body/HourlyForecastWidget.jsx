@@ -79,7 +79,7 @@ const HourlyForecastWidget = ({ data }) => {
         onClose={() => {
           setshowHourlyModal(false);
         }}
-        title="Show weather details"
+        title="More Hourly Weather"
       >
         <div>{`Humidity: ${Math.round(data?.humidity)}°${
           units === "metric" ? "%" : "%"

@@ -6,7 +6,10 @@ const Modal = ({ children, open, onClose, title = "" }) => {
     <>
       {open && (
         <div className="fixed inset-0 w-screen h-screen bg-gray-500/30 background-blur-[1px] flex justify-center overflow-y-auto p-4 z-50">
-          <div className="card m-auto w-[400px] p-4 bg-white animate-bounce-short  px-8 py-5 shadow-lg border border-gray-400  rounded-lg z-50">
+          <div
+            className="card m-auto w-[400px] p-4 bg-white animate-bounce px-8 py-5 shadow-lg border border-gray-400 rounded-lg z-50"
+            style={{ animationIterationCount: 1/2 }}
+          >
             <div className="flex justify-between items-center mx-4 py-4 border-b border-gray-300">
               <h4 className="text-lg font-bold">{title || "Modal"}</h4>
               <button
