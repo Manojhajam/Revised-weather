@@ -3913,7 +3913,7 @@ export const searchData = [
         {
           "date": "2025-06-24T00:00:00",
           "weather": "cloudy",
-          "icon": 3,
+          "icon": 8,
           "summary": "Cloudy",
           "temperature": 17.5,
           "feels_like": 20.2,

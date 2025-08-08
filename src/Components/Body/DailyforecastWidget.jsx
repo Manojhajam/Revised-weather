@@ -65,27 +65,31 @@ const DailyforecastWidget = ({ data, handleClick }) => {
         </div>
         <div className="preciption">{Math.round(precipitation.total)} mm/h</div>
       </div>
-      <Modal
-        open={showDailyweather}
-        onClose={() => {
-          setShowDailyweather(false);
-        }}
-        title="Show weather details"
-      >
-        <div>{`Humidity: ${Math.round(data?.humidity)}°${
-          units === "metric" ? "%" : "%"
-        }`}</div>
-        <div>{`Wind Speed: ${Math.round(data?.wind?.speed)}°${
-          units === "metric" ? "C" : "F"
-        }`}</div>
-        <div>{`Feels_like: ${Math.round(data?.feels_like )}${
-          units === "metric" ? "m/s" : "mph"
-        }`}</div>
-        <div>{`Humidity: ${Math.round(data?.humidity)}°${
-          units === "metric" ? "C" : "F"
-        }`}</div>
 
-      </Modal>
+      {showDailyweather && (
+        <Modal
+          open={showDailyweather}
+          onClose={() => {
+            setShowDailyweather(false);
+          }}
+          title="Weather Details"
+        >
+          <div className="space-y-2">
+            <div>Humidity: {Math.round(data?.humidity || 0)}%</div>
+            <div>
+              Wind Speed: {Math.round(data?.wind?.speed || 0)}{" "}
+              {units === "metric" ? "m/s" : "mph"}
+            </div>
+            <div>
+              Feels like: {Math.round(data?.feels_like || 0)}°
+              {units === "metric" ? "C" : "F"}
+            </div>
+            <div>
+              Precipitation: {Math.round(precipitation?.total || 0)} mm/h
+            </div>
+          </div>
+        </Modal>
+      )}
     </>
   );
 };
